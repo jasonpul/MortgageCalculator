@@ -1,13 +1,18 @@
-import {StatusBar} from 'expo-status-bar'
 import React from 'react'
 import {StyleSheet, Text, View, TextInput} from 'react-native'
-import Card from './components/Card'
+import InputCard from './components/InputCard'
+import LoanContextProvider from './context/LoanContext'
+import JumboTron from './components/JumboTron'
+import Signature from './components/Signature'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Card />
-      <StatusBar style="auto" />
+      <LoanContextProvider>
+        <JumboTron />
+        <InputCard />
+      </LoanContextProvider>
+      <Signature />
     </View>
   )
 }
